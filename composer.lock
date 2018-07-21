@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3f74ae525c63def52eed8d5a54905e0",
+    "content-hash": "07e03717a5190e0bc5e40c8b1dd611cb",
     "packages": [
         {
             "name": "psr/log",
@@ -89,6 +89,47 @@
             ],
             "description": "A full-featured, yet ridiculously simple commandline parser for your next php cli script. Stop fighting with getopt().",
             "time": "2018-06-26T14:29:46+00:00"
+        },
+        {
+            "name": "vyuldashev/xml-to-array",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vyuldashev/xml-to-array.git",
+                "reference": "147423caff4319f976a0a95a55a7088ae48d0d7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vyuldashev/xml-to-array/zipball/147423caff4319f976a0a95a55a7088ae48d0d7a",
+                "reference": "147423caff4319f976a0a95a55a7088ae48d0d7a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.1",
+                "phpunit/phpunit": "^6.4",
+                "spatie/array-to-xml": "^2.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vyuldashev\\XmlToArray\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladimir Yuldashev",
+                    "email": "misterio92@gmail.com"
+                }
+            ],
+            "description": "Convert xml to an array",
+            "time": "2017-10-12T21:39:31+00:00"
         }
     ],
     "packages-dev": [

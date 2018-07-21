@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "./", "/app",
     owner: "vagrant",
     group: "vagrant",
-    mount_options: ["dmode=6775,fmode=6664"]
+    mount_options: ["dmode=6775,fmode=6775"]
 
   if File.directory?(File.expand_path("./vendor"))
     config.vm.synced_folder "./vendor", "/app/vendor",

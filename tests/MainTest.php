@@ -9,8 +9,12 @@ class MainTest extends TestCase
     /** @test */
     public function convert_file_from_rss_to_atom()
     {
-        $app = new Main(new FileReader());
+        $app = new Main();
 
-        $result = $app->run();
+        $result = $app->run(
+            new \Garden\Cli\Args('test', ['out' => 'rss'], ['testrss.rss'])
+        );
+
+        var_dump($result);die();
     }
 }

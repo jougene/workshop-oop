@@ -2,12 +2,14 @@
 
 namespace App;
 
+use App\Converter\AtomConverter;
 use App\Converter\ConverterInterface;
 
 class ConverterResolver
 {
-    public static function resolve() : ConverterInterface
+    public static function resolve($params) : ConverterInterface
     {
-        return 1;
+        // logic for choosing converter
+        return new AtomConverter();
     }
 }

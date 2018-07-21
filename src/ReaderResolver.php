@@ -2,12 +2,13 @@
 
 namespace App;
 
+use App\Reader\FileReader;
 use App\Reader\ReaderInterface;
 
 class ReaderResolver
 {
-    public static function resolve(array $params): ReaderInterface
+    public static function resolve($params): ReaderInterface
     {
-
+        return new FileReader();
     }
 }

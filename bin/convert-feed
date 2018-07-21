@@ -1,14 +1,22 @@
 #!/usr/bin/env php
 <?php
 
+use App\Main;
 use Garden\Cli\Cli;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $cli = new Cli();
 
-var_dump($cli);die();
+$cli->description('Dump some information from your database.')
+    ->opt('out:o', 'Output file format', true)
+    ->opt('help:h', 'Help', false, 'integer');
 
+$args = $cli->parse($argv, true);
+
+$app = new Main();
+$app->run($args);
+//var_dump($args);die();
 /*
  * Parse input params
  * Pass params to application
@@ -17,7 +25,4 @@ var_dump($cli);die();
  *
 */
 
-//use App\Main;
 //
-//$app = new Main();
-//$app->run();

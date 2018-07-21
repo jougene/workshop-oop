@@ -4,5 +4,5 @@ namespace App\Converter;
 
 interface ConverterInterface
 {
-    public function convert();
+    public function convert(array $content);
 }

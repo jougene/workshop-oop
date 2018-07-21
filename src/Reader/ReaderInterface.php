@@ -4,5 +4,5 @@ namespace App\Reader;
 
 interface ReaderInterface
 {
-    public function read();
+    public function read(string $path);
 }

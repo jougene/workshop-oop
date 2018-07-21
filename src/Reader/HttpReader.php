@@ -4,7 +4,7 @@ namespace App\Reader;
 
 class HttpReader implements ReaderInterface
 {
-    public function read()
+    public function read(string $path)
     {
 
     }
