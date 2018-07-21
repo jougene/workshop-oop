@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+use Garden\Cli\Cli;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$cli = new Cli();
+
+var_dump($cli);die();
+
+/*
+ * Parse input params
+ * Pass params to application
+ * Run app with concrete command
+ *
+ *
+*/
+
+//use App\Main;
+//
+//$app = new Main();
+//$app->run();

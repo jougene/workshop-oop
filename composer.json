@@ -3,7 +3,7 @@
     "description": "Thinking OOP",
     "type": "library",
     "require": {
-        "symfony/console": "4.1.1"
+        "vanilla/garden-cli": "2.1"
     },
     "require-dev": {
         "phpunit/phpunit": "7.2.7"
