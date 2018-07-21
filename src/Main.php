@@ -4,13 +4,13 @@ namespace App;
 
 class Main
 {
-    public function run($params)
+    public function run($opts, $args)
     {
-        $reader = ReaderResolver::resolve($params);
+        $reader = ReaderResolver::resolve($args);
 
-        $converter = ConverterResolver::resolve($params);
+        $converter = ConverterResolver::resolve($opts);
 
-        $parser = ParserResolver::resolve($params);
+        $parser = ParserResolver::resolve($opts);
 
         $path = __DIR__ . '/../testrss.rss';
 

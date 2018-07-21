@@ -10,10 +10,9 @@ class MainTest extends TestCase
     {
         $app = new Main();
 
-        $result = $app->run(new \Garden\Cli\Args(
-            'test',
+        $result = $app->run(
             ['out' => 'rss'],
-            [__DIR__ . '/__fixtues__/testatom.xml'])
+            [__DIR__ . '/__fixtues__/testatom.xml']
         );
 
         $expected = file_get_contents(__DIR__ . '/__fixtues__/testrss.xml');
