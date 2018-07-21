@@ -1,20 +1,23 @@
 <?php
 
 use App\Main;
-use App\Reader\FileReader;
 use PHPUnit\Framework\TestCase;
 
 class MainTest extends TestCase
 {
     /** @test */
-    public function convert_file_from_rss_to_atom()
+    public function convertFileFromRssToAtom()
     {
         $app = new Main();
 
-        $result = $app->run(
-            new \Garden\Cli\Args('test', ['out' => 'rss'], ['testrss.xml'])
+        $result = $app->run(new \Garden\Cli\Args(
+            'test',
+            ['out' => 'rss'],
+            [__DIR__ . '/__fixtues__/testatom.xml'])
         );
 
-        var_dump($result);die();
+        $expected = file_get_contents(__DIR__ . '/__fixtues__/testrss.xml');
+
+        $this->assertEquals($expected, $result);
     }
 }
