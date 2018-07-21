@@ -12,7 +12,7 @@ class MainTest extends TestCase
         $app = new Main();
 
         $result = $app->run(
-            new \Garden\Cli\Args('test', ['out' => 'rss'], ['testrss.rss'])
+            new \Garden\Cli\Args('test', ['out' => 'rss'], ['testrss.xml'])
         );
 
         var_dump($result);die();
