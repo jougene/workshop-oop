@@ -16,13 +16,3 @@ $args = $cli->parse($argv, true);
 
 $app = new Main();
 $app->run($args);
-//var_dump($args);die();
-/*
- * Parse input params
- * Pass params to application
- * Run app with concrete command
- *
- *
-*/
-
-//
