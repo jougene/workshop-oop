@@ -4,13 +4,13 @@ namespace App\Feed;
 
 use Carbon\Carbon;
 
-class FeedSctructure
+class FeedSctructure implements \JsonSerializable
 {
     private $title;
     private $description;
     private $link;
     private $updatedAt;
-    private $author = [];
+    private $author;
 
     /** @var FeedItem[] */
     private $items;
@@ -31,14 +31,22 @@ class FeedSctructure
         $this->items = $items;
     }
 
-    public function toArray()
+    /**
+     * @return FeedAuthor
+     */
+    public function getAuthor(): FeedAuthor
+    {
+        return $this->author;
+    }
+
+    public function jsonSerialize()
     {
         return [
             'title' => $this->title,
             'description' => $this->description,
             'link' => $this->link,
             'updatedAt' => $this->updatedAt->toDateTimeString(),
-            'author' => $this->author,
+            'author' => $this->author->jsonSerialize(),
             'items' => $this->items,
         ];
     }

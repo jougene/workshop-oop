@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Main
+class Converter
 {
     public function run($opts, $args)
     {

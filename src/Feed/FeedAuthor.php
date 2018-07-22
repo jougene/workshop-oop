@@ -2,7 +2,7 @@
 
 namespace App\Feed;
 
-class FeedAuthor
+class FeedAuthor implements \JsonSerializable
 {
     private $name;
     private $email;
@@ -11,5 +11,24 @@ class FeedAuthor
     {
         $this->name = $name;
         $this->email = $email;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+
+    public function jsonSerialize()
+    {
+        return [
+            'name' => $this->name,
+            'email' => $this->email
+        ];
     }
 }

@@ -11,4 +11,26 @@ class Helper
 
         return $out;
     }
+
+    public static function toXml(\SimpleXMLElement $object, array $data)
+    {
+        foreach ($data as $key => $value) {
+            if (is_array($value)) {
+                $new_object = $object->addChild($key);
+                self::toXml($new_object, $value);
+            } else {
+                if ($key == (int) $key) {
+                    $key = "$key";
+                }
+
+                $object->addChild($key, $value);
+            }
+        }
+        return $object;
+    }
+
+    public static function removeLineBreaks($string)
+    {
+        return str_replace(PHP_EOL, '', $string);
+    }
 }
