@@ -16,7 +16,7 @@ class AtomParser implements ParserInterface
         return new FeedSctructure(
             $xml->title,
             $xml->subtitle,
-            $xml->link,
+            $xml->link->attributes()->href,
             Carbon::parse($xml->updated),
             new FeedAuthor($xml->author->name, $xml->author->email),
             $this->fillItems($xml->entry)
@@ -41,10 +41,10 @@ class AtomParser implements ParserInterface
     {
         return new FeedItem(
             $item->title,
-            $item->link,
-            $item->guid,
-            Carbon::parse($item->pubDate),
-            $item->description
+            $item->link->attributes()->href,
+            $item->id,
+            Carbon::parse($item->updated),
+            $item->summary
         );
     }
 }

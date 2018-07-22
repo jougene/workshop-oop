@@ -25,9 +25,9 @@ class RssParser implements ParserInterface
 
     private function parseAuthor($authorString)
     {
-        [$name, $email] = explode(" (", $authorString);
+        [$email, $name] = explode(" (", $authorString);
 
-        return [$name, rtrim($email, ")")];
+        return [rtrim($name, ")"), $email];
     }
 
     private function fillItems($items) : array

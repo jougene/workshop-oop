@@ -37,7 +37,7 @@ class FeedSctructure
             'title' => $this->title,
             'description' => $this->description,
             'link' => $this->link,
-            'updatedAt' => $this->updatedAt,
+            'updatedAt' => $this->updatedAt->toDateTimeString(),
             'author' => $this->author,
             'items' => $this->items,
         ];
