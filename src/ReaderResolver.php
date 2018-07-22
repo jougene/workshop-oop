@@ -7,7 +7,7 @@ use App\Reader\ReaderInterface;
 
 class ReaderResolver
 {
-    public static function resolve($params): ReaderInterface
+    public static function resolve($path): ReaderInterface
     {
         return new FileReader();
     }

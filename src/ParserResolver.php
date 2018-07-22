@@ -13,12 +13,12 @@ class ParserResolver
         'rss' => RssParser::class
     ];
 
-    public static function resolve($params):ParserInterface
+    public static function resolve($path):ParserInterface
     {
-        $filePath = $params['path'];
-
-        // resolve which file type we have - by content or by file info
-        $extention = (new \SplFileObject($filePath))->getExtension();
+        // resolve which file type we have
+        // - by content
+        // - by by file info
+        $extention = (new \SplFileObject($path))->getExtension();
 
         $className = self::$extParsersMap[$extention];
 

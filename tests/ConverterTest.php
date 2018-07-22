@@ -20,7 +20,7 @@ class ConverterTest extends TestCase
 
         $sanitized = Helper::removeLineBreaks($string);
 
-        $this->assertEquals($sanitized, $result);
+        $this->assertXmlStringNotEqualsXmlString($sanitized, $result);
     }
 
     /** @test */
@@ -37,6 +37,6 @@ class ConverterTest extends TestCase
 
         $sanitized = Helper::removeLineBreaks($string);
 
-        $this->assertEquals($sanitized, Helper::removeLineBreaks($result));
+        $this->assertXmlStringNotEqualsXmlString($sanitized, $result);
     }
 }

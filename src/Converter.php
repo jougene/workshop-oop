@@ -4,15 +4,13 @@ namespace App;
 
 class Converter
 {
-    public function run($opts, $args)
+    public function run($path, $opts)
     {
-        $reader = ReaderResolver::resolve($args);
+        $reader = ReaderResolver::resolve($path);
 
         $converter = ConverterResolver::resolve($opts);
 
-        $parser = ParserResolver::resolve($args);
-
-        $path = $args['path'];
+        $parser = ParserResolver::resolve($path);
 
         $fileContent = $reader->read($path);
 

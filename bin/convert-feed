@@ -15,4 +15,4 @@ $cli->description('Dump some information from your database.')
 $args = $cli->parse($argv, true);
 
 $app = new Converter();
-$app->run($args->getOpts(), $args->getArgs());
+$app->run($args->getArgs()[0], $args->getOpts());
