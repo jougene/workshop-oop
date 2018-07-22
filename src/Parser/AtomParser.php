@@ -2,14 +2,19 @@
 
 namespace App\Parser;
 
-use App\Helper;
+use Carbon\Carbon;
+use App\Feed\FeedAuthor;
+use App\Feed\FeedSctructure;
 
 class AtomParser implements ParserInterface
 {
-    public function parse(string $content): array
+    public function parse(string $content): FeedSctructure
     {
-        $xml = new \SimpleXMLElement($content);
 
-        return Helper::xml2array($xml);
+    }
+
+    private function fillItems($items) : array
+    {
+        return [];
     }
 }

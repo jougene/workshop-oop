@@ -10,9 +10,9 @@ class Main
 
         $converter = ConverterResolver::resolve($opts);
 
-        $parser = ParserResolver::resolve($opts);
+        $parser = ParserResolver::resolve($args);
 
-        $path = __DIR__ . '/../testrss.rss';
+        $path = $args['path'];
 
         $fileContent = $reader->read($path);
 

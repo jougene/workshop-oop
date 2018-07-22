@@ -12,10 +12,25 @@ class MainTest extends TestCase
 
         $result = $app->run(
             ['out' => 'rss'],
-            [__DIR__ . '/__fixtues__/testatom.xml']
+            ['path' => __DIR__ . '/__fixtues__/testatom.xml']
         );
 
-        $expected = file_get_contents(__DIR__ . '/__fixtues__/testrss.xml');
+        $expected = file_get_contents(__DIR__ . '/__fixtues__/testrss.rss');
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /** @test */
+    public function convertFileFromAtomToRss()
+    {
+        $app = new Main();
+
+        $result = $app->run(
+            ['out' => 'atom'],
+            ['path' => __DIR__ . '/__fixtues__/testrss.rss']
+        );
+
+        $expected = file_get_contents(__DIR__ . '/__fixtues__/testatom.xml');
 
         $this->assertEquals($expected, $result);
     }

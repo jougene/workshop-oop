@@ -2,7 +2,9 @@
 
 namespace App\Converter;
 
+use App\Feed\FeedSctructure;
+
 interface ConverterInterface
 {
-    public function convert(array $content);
+    public function convert(FeedSctructure $structure);
 }
