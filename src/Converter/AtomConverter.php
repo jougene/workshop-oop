@@ -20,13 +20,18 @@ class AtomConverter implements ConverterInterface
                 'name' => $feedArray['author']['name'],
                 'email' => $feedArray['author']['email'],
             ],
-            'entry' => $this->extractItems($feedArray['items'])
         ];
 
         $xml = new \SimpleXMLElement('<feed xmlns="http://www.w3.org/2005/Atom"/>');
-
         $xml = Helper::toXml($xml, $array);
-
+        $items = $this->extractItems($feedArray['items']);
+        foreach($items as $item) {
+            $entry = $xml->addChild('entry');
+            foreach($item as $key => $value) {
+                $entry->addChild($key, $value);
+            }
+        }
+            
         $xmlString = $xml->asXml();
         $withEncoding = $this->addEncoding($xmlString);
 

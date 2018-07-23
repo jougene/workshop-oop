@@ -25,3 +25,4 @@ class ParserResolver
         return new $className();
     }
 }
+

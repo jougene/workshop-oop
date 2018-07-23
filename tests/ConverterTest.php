@@ -3,17 +3,17 @@
 use App\Converter;
 use App\Helper;
 use PHPUnit\Framework\TestCase;
+use PrettyXml\Formatter;
 
 class ConverterTest extends TestCase
 {
-    /** @test */
     public function convertFileFromRssToAtom()
     {
         $app = new Converter();
 
         $result = $app->run(
-            ['out' => 'rss'],
-            ['path' => __DIR__ . '/__fixtues__/testatom.xml']
+            __DIR__ . '/__fixtues__/testatom.xml',
+            ['out' => 'rss']
         );
 
         $string = file_get_contents(__DIR__ . '/__fixtues__/testrss.rss');
@@ -29,8 +29,8 @@ class ConverterTest extends TestCase
         $app = new Converter();
 
         $result = $app->run(
-            ['out' => 'atom'],
-            ['path' => __DIR__ . '/__fixtues__/testrss.rss']
+            __DIR__ . '/__fixtues__/testrss.rss',
+            ['out' => 'atom']
         );
 
         $string = file_get_contents(__DIR__ . '/__fixtues__/testatom.xml');

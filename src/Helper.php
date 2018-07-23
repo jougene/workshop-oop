@@ -19,10 +19,6 @@ class Helper
                 $new_object = $object->addChild($key);
                 self::toXml($new_object, $value);
             } else {
-                if ($key == (int) $key) {
-                    $key = "$key";
-                }
-
                 $object->addChild($key, $value);
             }
         }
@@ -34,3 +30,4 @@ class Helper
         return str_replace(PHP_EOL, '', $string);
     }
 }
+

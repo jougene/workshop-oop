@@ -20,3 +20,4 @@ class ConverterResolver
         return new $className();
     }
 }
+

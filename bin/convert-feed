@@ -3,6 +3,7 @@
 
 use App\Converter;
 use Garden\Cli\Cli;
+use PrettyXml\Formatter;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -15,4 +16,6 @@ $cli->description('Dump some information from your database.')
 $args = $cli->parse($argv, true);
 
 $app = new Converter();
-$app->run($args->getArgs()[0], $args->getOpts());
+$result = $app->run($args->getArgs()[0], $args->getOpts());
+$formatter = new Formatter();
+echo $formatter->format($result) . PHP_EOL;
