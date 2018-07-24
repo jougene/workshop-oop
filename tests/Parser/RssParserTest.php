@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Parser;
+
 use App\Parser\RssParser;
 
 class RssParserTest extends \PHPUnit\Framework\TestCase

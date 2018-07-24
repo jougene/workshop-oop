@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Parser;
+
 use App\Parser\AtomParser;
 use PHPUnit\Framework\TestCase;
 

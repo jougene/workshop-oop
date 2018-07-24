@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests;
+
 use App\Converter;
 use App\Helper;
 use PHPUnit\Framework\TestCase;

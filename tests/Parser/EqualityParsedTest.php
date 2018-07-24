@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Parser;
+
 use App\Parser\{RssParser, AtomParser};
 
 class EqualityParsedTest extends \PHPUnit\Framework\TestCase
