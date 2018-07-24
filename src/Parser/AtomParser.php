@@ -25,7 +25,7 @@ class AtomParser implements ParserInterface
 
     private function fillItems(\SimpleXMLElement $items) : array
     {
-        if($items->count() === 1) {
+        if ($items->count() === 1) {
             return [$this->fillOne($items)];
         }
 

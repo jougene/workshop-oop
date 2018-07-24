@@ -25,9 +25,9 @@ class AtomConverter implements ConverterInterface
         $xml = new \SimpleXMLElement('<feed xmlns="http://www.w3.org/2005/Atom"/>');
         $xml = Helper::toXml($xml, $array);
         $items = $this->extractItems($feedArray['items']);
-        foreach($items as $item) {
+        foreach ($items as $item) {
             $entry = $xml->addChild('entry');
-            foreach($item as $key => $value) {
+            foreach ($item as $key => $value) {
                 $entry->addChild($key, $value);
             }
         }

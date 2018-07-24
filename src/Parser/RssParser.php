@@ -32,7 +32,7 @@ class RssParser implements ParserInterface
 
     private function fillItems($items) : array
     {
-        if(!is_array($items)) {
+        if (!is_array($items)) {
             return [$this->fillOne($items)];
         }
 

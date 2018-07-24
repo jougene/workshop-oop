@@ -12,4 +12,3 @@ class ReaderResolver
         return new FileReader();
     }
 }
-
