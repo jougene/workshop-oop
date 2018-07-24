@@ -1,6 +1,6 @@
 install:
 	composer install
 lint:
-	composer run-script phpcs -- --standard=PSR2 src bin tests
+	vendor/bin/phpcs -- --standard=PSR2 src bin tests
 test:
 	vendor/bin/phpunit tests/

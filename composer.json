@@ -13,9 +13,6 @@
         "psy/psysh":"0.9.6",
         "squizlabs/php_codesniffer": "3.3.0"
     },
-    "scripts": {
-        "phpcs": "vendor/bin/phpcs"
-    },
     "autoload": {
         "psr-4": {
             "App\\": "src/"
