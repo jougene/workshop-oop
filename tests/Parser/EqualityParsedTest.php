@@ -2,7 +2,8 @@
 
 namespace Tests\Parser;
 
-use App\Parser\{RssParser, AtomParser};
+use App\Parser\RssParser;
+use App\Parser\AtomParser;
 
 class EqualityParsedTest extends \PHPUnit\Framework\TestCase
 {

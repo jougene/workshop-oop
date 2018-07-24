@@ -17,7 +17,10 @@ class RssParserTest extends \PHPUnit\Framework\TestCase
         $this->assertInstanceOf(\App\Feed\FeedSctructure::class, $parsed);
         $this->assertEquals('Example Feed', $parsed->jsonSerialize()['title']);
         $this->assertEquals('Insert witty or insightful remark here', $parsed->jsonSerialize()['description']);
-        $this->assertEquals(['name' => 'John Doe', 'email' => 'johndoe@example.com'], $parsed->jsonSerialize()['author']);
+        $this->assertEquals(
+            ['name' => 'John Doe', 'email' => 'johndoe@example.com'],
+            $parsed->jsonSerialize()['author']
+        );
 
         $this->assertCount(2, $parsed->jsonSerialize()['items']);
     }

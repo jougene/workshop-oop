@@ -20,7 +20,10 @@ class AtomParserTest extends TestCase
         $this->assertEquals('Insert witty or insightful remark here', $parsed->jsonSerialize()['description']);
         $this->assertEquals('http://example.org/', $parsed->jsonSerialize()['link']);
         $this->assertEquals('2003-12-13 18:30:02', $parsed->jsonSerialize()['updatedAt']);
-        $this->assertEquals(['name' => 'John Doe', 'email' => 'johndoe@example.com'], $parsed->jsonSerialize()['author']);
+        $this->assertEquals(
+            ['name' => 'John Doe', 'email' => 'johndoe@example.com'],
+            $parsed->jsonSerialize()['author']
+        );
 
         $this->assertCount(2, $parsed->jsonSerialize()['items']);
     }
