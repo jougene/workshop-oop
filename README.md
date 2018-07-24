@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jougene/workshop-oop.svg?branch=master)](https://travis-ci.org/jougene/workshop-oop)
+[![Build Status](https://travis-ci.com/jougene/workshop-oop.svg?branch=master)](https://travis-ci.com/jougene/workshop-oop)
 # Hexlet OOP Workshop
 Обсуждения и разбор кейсов, связанных с ооп, построены вокруг процесса создания утилиты командной строки. Утилита представляет из себя программу на динамическом языке, которая принимает на вход rss или atom, выполняет некоторые манипуляции (если указано) и на выходе выдает также rss или atom. В процессе возможны пребразованиф форматов rss -> atom и atom -> rss. В манипуляции входят следующие задачи:
 
